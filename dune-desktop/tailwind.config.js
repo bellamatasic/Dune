@@ -8,6 +8,8 @@ export default {
     extend: {
       fontFamily: {
         oswald: ['Oswald', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+        kite: ['Kite One', 'sans-serif'],
       },
     },
   },
