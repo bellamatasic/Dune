@@ -1,12 +1,12 @@
 // src/App.tsx
 import React from "react";
 import Header from "./components/Header";
-import Title from "./sections/Title";
-import Metrics from "./sections/Metrics";
-import Services from "./sections/Services";
-import Portfolio from "./sections/Portfolio";
-import Media from "./sections/Media";
-import Testimonial from "./sections/Testimonial";
+import Title from "./pages/Title";
+import Metrics from "./pages/Metrics";
+import Services from "./pages/Services";
+import Portfolio from "./pages/Portfolio";
+import Media from "./pages/Media";
+import Testimonial from "./pages/Testimonial";
 
 const App: React.FC = () => {
   return (
