@@ -10,6 +10,7 @@ export default {
         oswald: ['Oswald', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
         kite: ['Kite One', 'sans-serif'],
+        abhaya: ['"Abhaya Libre"', 'serif'],
       },
     },
   },

@@ -15,9 +15,12 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
 }) => {
   return (
     <div className="w-96 bg-neutral-100 rounded-[10px] shadow-[10px_10px_0px_0px_rgba(0,0,0,0.25)] p-4 relative">
-      <div className="text-black text-8xl font-extrabold absolute left-[-20px] top-[-20px] font-['Abhaya_Libre_ExtraBold'] leading-[60px]">
+      <div
+        className="font-abhaya text-black text-8xl font-extrabold absolute left-[-20px] top-[-22px] z-20 drop-shadow-[2px_2px_2px_rgba(0,0,0,0.3)] pointer-events-none select-none"
+      >
         “
       </div>
+
       <div className="text-black text-xs font-black font-['Inter'] leading-loose mb-1">
         {title}
       </div>

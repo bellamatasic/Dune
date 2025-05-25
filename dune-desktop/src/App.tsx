@@ -7,6 +7,7 @@ import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
 import Media from "./pages/Media";
 import Testimonial from "./pages/Testimonial";
+import Contact from "./pages/Contact";
 
 const App: React.FC = () => {
   return (
@@ -23,6 +24,8 @@ const App: React.FC = () => {
       <Media/>
       <div className="h-32" /> {/* 128px of space */}
       <Testimonial/>
+      <div className="h-32" /> {/* 128px of space */}
+      <Contact/>
     </div>
   );
 };

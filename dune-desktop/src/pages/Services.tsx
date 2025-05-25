@@ -2,16 +2,16 @@ import React from "react";
 
 const Services: React.FC = () => {
   return (
-    <section className="w-full max-w-[1280px] mx-auto py-24 px-4 bg-white relative">
+    <section className="w-full max-w-[1280px] mx-auto py-16 px-4 bg-white relative">
       {/* Title background text */}
       <div className="absolute z-20 text-[200px] font-bold font-oswald text-purple-500 leading-[180px] -left-60 top-50 hidden lg:block pointer-events-none drop-shadow-[0_0_20px_rgba(168,85,247,0.8)]">
         SE<br />RV<br />IC<br />ES
       </div>
 
       {/* Grid Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-3">
         {/* Left column with images */}
-        <div className="space-y-8">
+        <div className="space-y-4">
           <img
             src="https://placehold.co/254x339"
             className="rounded-[10px] border border-black"
@@ -25,14 +25,14 @@ const Services: React.FC = () => {
         </div>
 
         {/* Right column with title and services */}
-        <div className="space-y-10">
+        <div className="space-y-6">
           {/* Title moved inside here */}
-          <h2 className="text-6xl font-oswald font-bold mb-8">
+          <h2 className="text-6xl font-oswald font-bold mb-4">
             AI Solutions Tailored To Boost Your Content
           </h2>
 
           <div>
-            <h3 className="text-2xl font-bold font-inter mb-2">
+            <h3 className="text-2xl font-bold font-inter mb-1">
               COACHING AND TRAINING
             </h3>
             <p className="text-xl font-extralight font-inter">
@@ -41,7 +41,7 @@ const Services: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="text-2xl font-extrabold font-inter mb-2">
+            <h3 className="text-2xl font-extrabold font-inter mb-1">
               DONE-FOR-YOU AI CONTENT
             </h3>
             <p className="text-xl font-extralight font-inter">
@@ -50,7 +50,7 @@ const Services: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold font-inter mb-2">
+            <h3 className="text-2xl font-bold font-inter mb-1">
               AUTOMATION & SYSTEM SETUP
             </h3>
             <p className="text-xl font-extralight font-inter">
@@ -59,7 +59,7 @@ const Services: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold font-inter mb-2">
+            <h3 className="text-2xl font-bold font-inter mb-1">
               AI STRATEGY & CONSULTING
             </h3>
             <p className="text-xl font-extralight font-inter">
@@ -68,8 +68,6 @@ const Services: React.FC = () => {
           </div>
         </div>
       </div>
-
-
     </section>
   );
 };
