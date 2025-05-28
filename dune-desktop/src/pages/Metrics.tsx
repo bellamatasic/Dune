@@ -17,9 +17,13 @@ const MetricsSection: React.FC = () => {
             <p className="text-5xl font-['Kite_One'] text-black text-center">On Making You Money</p>
         </div>
 
-        {/* Decorative gradients (optional) */}
-        <div className="absolute left-5 bottom-10 w-6 h-52 bg-gradient-to-b from-neutral-500/10 to-stone-300/10" />
-        <div className="absolute right-5 top-10 w-6 h-52 bg-gradient-to-b from-neutral-500/10 to-stone-300/10 rotate-180" />
+        {/* Decorative gradients */}
+        <div className="absolute left-8 bottom-10 w-[34px] h-[548px] bg-gradient-to-b from-neutral-500/10 to-stone-100/10" />
+        <div className="absolute left-28 bottom-10 w-[34px] h-[676px] bg-gradient-to-b from-neutral-500/10 to-stone-100/10" />
+        <div className="absolute left-48 bottom-10 w-[34px] h-[612px] bg-gradient-to-b from-neutral-500/10 to-stone-100/10" />
+        <div className="absolute right-8 top-10 w-[34px] h-[548px] bg-gradient-to-b from-neutral-500/10 to-stone-100/10 rotate-180" />
+        <div className="absolute right-28 top-10 w-[34px] h-[676px] bg-gradient-to-b from-neutral-500/10 to-stone-100/10 rotate-180" />
+        <div className="absolute right-48 top-10 w-[34px] h-[612px] bg-gradient-to-b from-neutral-500/10 to-stone-100/10 rotate-180" />
         </section>
     );
 };

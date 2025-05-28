@@ -21,10 +21,10 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
         “
       </div>
 
-      <div className="text-black text-xs font-black font-['Inter'] leading-loose mb-1">
+      <div className="text-black text-3xl font-black font-['Inter'] leading-loose mb-4">
         {title}
       </div>
-      <div className="text-black text-xs font-extralight font-['Inter'] leading-loose mb-4">
+      <div className="text-black text-2xl font-extralight font-['Inter'] leading-loose mb-10">
         {message}
       </div>
       <div className="flex items-center gap-3">
@@ -33,7 +33,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
           alt={name}
           className="w-10 h-10 rounded-full object-cover"
         />
-        <span className="text-black text-sm font-extrabold font-['Inter']">{name}</span>
+        <span className="text-black text-3xl font-extrabold font-['Inter']">{name}</span>
       </div>
     </div>
   );
