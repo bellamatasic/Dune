@@ -1,11 +1,17 @@
 import React from "react";
+import { FaArrowRight } from "react-icons/fa";
 
 const Services: React.FC = () => {
   return (
-    <section className="w-full py-12 px-4 bg-white relative overflow-hidden">
+    <section className="w-full py-32 px-4 bg-white relative overflow-hidden">
       {/* Title background text */}
-      <div className="absolute z-20 text-[200px] font-bold font-oswald text-purple-500 leading-[180px] left-[12%] top-10 hidden lg:block pointer-events-none drop-shadow-[0_0_20px_rgba(168,85,247,0.8)]">
-        SE<br />RV<br />IC<br />ES
+      <div className="absolute z-20 text-[200px] font-bold font-oswald leading-[180px] left-[calc(50%-750px)] top-[130px] hidden lg:block pointer-events-none">
+        <span className="absolute inset-0 text-purple-500 blur-sm">
+          SE<br />RV<br />IC<br />ES
+        </span>
+        <span className="relative z-10 text-white drop-shadow-[0_0_20px_rgba(168,85,247,0.8)]">
+          SE<br />RV<br />IC<br />ES
+        </span>
       </div>
 
       {/* Grid Layout */}
@@ -25,46 +31,73 @@ const Services: React.FC = () => {
         </div>
 
         {/* Right column with title and services */}
-        <div className="space-y-8 -ml-[10%]">
-          {/* Title moved inside here */}
-          <h2 className="text-6xl font-oswald font-bold mb-4">
+        <div className="space-y-6 -ml-[10%] w-[130%]">
+          <h2 className="text-6xl font-oswald font-bold mb-12 ml-8">
             AI Solutions Tailored To Boost Your Content
           </h2>
 
           <div>
-            <h3 className="text-2xl font-bold font-inter mb-3">
-              COACHING AND TRAINING
-            </h3>
-            <p className="text-4xl font-extralight font-inter">
-              We handle your content creation with AI, so you can focus on growing your business.
-            </p>
+            <div className="flex items-center gap-1 group">
+              <div className="w-12 h-12 rounded-full border-2 border-black flex items-center justify-center -translate-x-16 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
+                <FaArrowRight className="text-black text-xl" />
+              </div>
+              <div className="group-hover:translate-x-4 transition-transform duration-300 -ml-0.5">
+                <h3 className="text-3xl font-bold font-inter mb-2">
+                  COACHING AND TRAINING
+                </h3>
+                <p className="text-3xl font-light font-inter">
+                  We handle your content creation with AI, so you can focus on growing your business.
+                </p>
+              </div>
+            </div>
           </div>
 
           <div>
-            <h3 className="text-2xl font-extrabold font-inter mb-3">
-              DONE-FOR-YOU AI CONTENT
-            </h3>
-            <p className="text-4xl font-extralight font-inter">
-              Learn how to use AI tools effectively to streamline your processes.
-            </p>
+            <div className="flex items-center gap-1 group">
+              <div className="w-12 h-12 rounded-full border-2 border-black flex items-center justify-center -translate-x-16 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
+                <FaArrowRight className="text-black text-xl" />
+              </div>
+              <div className="group-hover:translate-x-4 transition-transform duration-300 -ml-0.5">
+                <h3 className="text-3xl font-bold font-inter mb-2">
+                  DONE-FOR-YOU AI CONTENT
+                </h3>
+                <p className="text-3xl font-light font-inter">
+                  Learn how to use AI tools effectively to streamline your processes.
+                </p>
+              </div>
+            </div>
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold font-inter mb-3">
-              AUTOMATION & SYSTEM SETUP
-            </h3>
-            <p className="text-4xl font-extralight font-inter">
-              We help you integrate AI into your workflow to save time and boost results.
-            </p>
+            <div className="flex items-center gap-1 group">
+              <div className="w-12 h-12 rounded-full border-2 border-black flex items-center justify-center -translate-x-16 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
+                <FaArrowRight className="text-black text-xl" />
+              </div>
+              <div className="group-hover:translate-x-4 transition-transform duration-300 -ml-0.5">
+                <h3 className="text-3xl font-bold font-inter mb-2">
+                  AUTOMATION & SYSTEM SETUP
+                </h3>
+                <p className="text-3xl font-light font-inter">
+                  We help you integrate AI into your workflow to save time and boost results.
+                </p>
+              </div>
+            </div>
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold font-inter mb-3">
-              AI STRATEGY & CONSULTING
-            </h3>
-            <p className="text-4xl font-extralight font-inter">
-              We build AI-powered systems that automate repetitive content tasks, saving you hours each week.
-            </p>
+            <div className="flex items-center gap-1 group">
+              <div className="w-12 h-12 rounded-full border-2 border-black flex items-center justify-center -translate-x-16 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
+                <FaArrowRight className="text-black text-xl" />
+              </div>
+              <div className="group-hover:translate-x-4 transition-transform duration-300 -ml-0.5">
+                <h3 className="text-3xl font-bold font-inter mb-2">
+                  AI STRATEGY & CONSULTING
+                </h3>
+                <p className="text-3xl font-light font-inter">
+                  We build AI-powered systems that automate repetitive content tasks, saving you hours each week.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ import TestimonialCard from "../components/TestimonialCard";
 import React from "react";
 const Testimonial: React.FC = () => {
     return (
-        <section className="w-full py-24 px-4 bg-white relative overflow-hidden min-h-[1000px]">
+        <section className="w-full py-32 px-4 bg-white relative overflow-hidden min-h-[1000px]">
 
             {/* Title */}
             <div className="absolute left-1/2 top-[100px] -translate-x-1/2 text-center">

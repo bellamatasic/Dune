@@ -5,7 +5,7 @@ import { FaInstagram, FaFacebook, FaEnvelope } from "react-icons/fa";
 const Contact: React.FC = () => {
   return (
     // <div className="w-[1280px] h-[832px] relative bg-black overflow-hidden">
-    <section className="w-full min-h-[850px] mx-auto py-24 px-4 bg-black relative flex flex-col items-center overflow-hidden">
+    <section className="w-full min-h-[850px] mx-auto py-32 px-4 bg-black relative flex flex-col items-center overflow-hidden">
       {/* Title */}
       <div className="text-center mb-24">
         <span className="text-white text-4xl font-bold font-['Inter']">grow</span>
