@@ -1,11 +1,47 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
+import aiPlaceholder from "../assets/ai_placeholder.jpg";
+import robotHand from "../assets/robot_hand.png";
 
 const Services: React.FC = () => {
+  const [visibleImages, setVisibleImages] = useState<Set<number>>(new Set());
+  const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = imageRefs.current.findIndex((ref) => ref === entry.target);
+          if (index !== -1) {
+            setVisibleImages((prev) => {
+              const newSet = new Set(prev);
+              if (entry.isIntersecting) {
+                newSet.add(index);
+              } else {
+                newSet.delete(index);
+              }
+              return newSet;
+            });
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Trigger when 50% of the image is visible
+        rootMargin: "-20% 0px", // Consider center 60% of the viewport
+      }
+    );
+
+    imageRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="w-full py-32 px-4 bg-white relative overflow-hidden">
       {/* Title background text */}
-      <div className="absolute z-20 text-[200px] font-bold font-oswald leading-[180px] left-[calc(50%-750px)] top-[130px] hidden lg:block pointer-events-none">
+      <div className="absolute z-20 text-[200px] font-bold font-oswald leading-[180px] left-[calc(50%-800px)] top-[130px] hidden lg:block pointer-events-none">
         <span className="absolute inset-0 text-purple-500 blur-sm">
           SE<br />RV<br />IC<br />ES
         </span>
@@ -16,18 +52,39 @@ const Services: React.FC = () => {
 
       {/* Grid Layout */}
       <div className="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12">
-        {/* Left column with images */}
-        <div className="space-y-3 ml-[25%]">
-          <img
-            src="https://placehold.co/254x339"
-            className="rounded-[10px] border border-black"
-            alt="Service 1"
-          />
-          <img
-            src="https://placehold.co/254x381"
-            className="rounded-[10px] border border-black"
-            alt="Service 2"
-          />
+        {/* Left column with images - Scrollable container */}
+        <div className="relative h-[800px]">
+          <div className="absolute inset-0 overflow-y-auto ml-[15%] pr-8 pl-8 scrollbar-hide">
+            <div className="space-y-3 max-w-[300px] mx-auto">
+              {[
+                { src: aiPlaceholder, alt: "AI Technology" },
+                { src: robotHand, alt: "Robot Hand" },
+                { src: aiPlaceholder, alt: "AI Technology" },
+                { src: robotHand, alt: "Robot Hand" },
+                { src: aiPlaceholder, alt: "AI Technology" },
+                { src: robotHand, alt: "Robot Hand" },
+              ].map((image, index) => (
+                <div
+                  key={index}
+                  ref={(el) => {
+                    imageRefs.current[index] = el;
+                  }}
+                  className="relative rounded-[10px] border border-black transition-all duration-500"
+                >
+                  <img
+                    src={image.src}
+                    className="rounded-[10px] w-full h-auto object-cover"
+                    alt={image.alt}
+                  />
+                  <div
+                    className={`absolute inset-0 bg-black transition-opacity duration-500 rounded-[10px] ${
+                      visibleImages.has(index) ? "opacity-0" : "opacity-50"
+                    }`}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Right column with title and services */}

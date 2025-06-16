@@ -4,43 +4,51 @@ import { FaInstagram, FaFacebook, FaEnvelope } from "react-icons/fa";
 
 const ContactMobile: React.FC = () => {
     return (
-        <section className="w-full min-h-[800px] mx-auto py-24 px-4 bg-black relative flex flex-col items-center overflow-hidden">
-            {/* Title */}
-            <div className="text-center mb-24">
-                <span className="text-white text-6xl font-extralight font-['Oswald'] leading-snug">get in </span>
-                <span className="text-white text-6xl font-bold font-['Oswald'] leading-snug">touch</span>
+        <section className="w-full min-h-[700px] mx-auto py-24 px-4 bg-black relative flex flex-col items-center justify-center overflow-hidden">
+            {/* Ghost DUNE Text */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <span className="text-white/5 text-[300px] font-bold font-['Oswald']">DUNE</span>
             </div>
 
-            {/* Contact Links Container */}
-            <div className="flex flex-col gap-16">
-                {/* Instagram */}
-                <div className="flex items-center gap-4">
-                    <div className="w-24 flex justify-center">
-                        <SocialIcon Icon={FaInstagram} />
-                    </div>
-                    <span className="text-white text-2xl font-normal font-['Inter']">INSTAGRAM</span>
+            {/* Main Content Container */}
+            <div className="flex flex-col items-center justify-center flex-1 mt-48">
+                {/* Title */}
+                <div className="text-center mb-24">
+                    <span className="text-white text-7xl font-extralight font-['Oswald'] leading-snug">get in </span>
+                    <span className="text-white text-7xl font-bold font-['Oswald'] leading-snug">touch</span>
                 </div>
 
-                {/* Facebook */}
-                <div className="flex items-center gap-4">
-                    <div className="w-24 flex justify-center">
-                        <SocialIcon Icon={FaFacebook} />
+                {/* Contact Links Container */}
+                <div className="flex flex-col gap-16">
+                    {/* Instagram */}
+                    <div className="flex items-center gap-6">
+                        <div className="w-20 flex justify-center">
+                            <SocialIcon Icon={FaInstagram} />
+                        </div>
+                        <span className="text-white text-3xl font-normal font-['Inter'] transition-all duration-300 hover:text-purple-400 cursor-pointer">INSTAGRAM</span>
                     </div>
-                    <span className="text-white text-2xl font-normal font-['Inter']">FACEBOOK</span>
+
+                    {/* Facebook */}
+                    <div className="flex items-center gap-6">
+                        <div className="w-20 flex justify-center">
+                            <SocialIcon Icon={FaFacebook} />
+                        </div>
+                        <span className="text-white text-3xl font-normal font-['Inter'] transition-all duration-300 hover:text-purple-400 cursor-pointer">FACEBOOK</span>
+                    </div>
+
+                    {/* Email */}
+                    <div className="flex items-center gap-6">
+                        <div className="w-20 flex justify-center">
+                            <SocialIcon Icon={FaEnvelope} />
+                        </div>
+                        <span className="text-white text-3xl font-normal font-['Inter'] transition-all duration-300 hover:text-purple-400 cursor-pointer">EMAIL</span>
+                    </div>
                 </div>
 
-                {/* Email */}
-                <div className="flex items-center gap-4">
-                    <div className="w-24 flex justify-center">
-                        <SocialIcon Icon={FaEnvelope} />
-                    </div>
-                    <span className="text-white text-2xl font-normal font-['Inter']">EMAIL</span>
+                {/* DUNE Text */}
+                <div className="mt-16 mb-16">
+                    <span className="text-white text-9xl font-bold font-['Oswald']">DUNE</span>
                 </div>
-            </div>
-
-            {/* DUNE Text */}
-            <div className="mt-16 mb-16">
-                <span className="text-white text-9xl font-bold font-['Oswald']">DUNE</span>
             </div>
 
             {/* Copyright */}

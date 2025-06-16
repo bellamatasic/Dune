@@ -38,34 +38,36 @@ function App() {
       ) : (
         <Header />
       )}
-      <ResponsiveWrapper
-        mobileComponent={TitleMobile}
-        desktopComponent={TitleSection}
-      />
-      <ResponsiveWrapper
-        mobileComponent={MetricsMobile}
-        desktopComponent={MetricsSection}
-      />
-      <ResponsiveWrapper
-        mobileComponent={ServicesMobile}
-        desktopComponent={Services}
-      />
-      <ResponsiveWrapper
-        mobileComponent={PortfolioMobile}
-        desktopComponent={PortfolioSection}
-      />
-      <ResponsiveWrapper
-        mobileComponent={MediaMobile}
-        desktopComponent={Media}
-      />
-      <ResponsiveWrapper
-        mobileComponent={TestimonialMobile}
-        desktopComponent={Testimonial}
-      />
-      <ResponsiveWrapper
-        mobileComponent={ContactMobile}
-        desktopComponent={Contact}
-      />
+      <div className="flex flex-col gap-32">
+        <ResponsiveWrapper
+          mobileComponent={TitleMobile}
+          desktopComponent={TitleSection}
+        />
+        <ResponsiveWrapper
+          mobileComponent={MetricsMobile}
+          desktopComponent={MetricsSection}
+        />
+        <ResponsiveWrapper
+          mobileComponent={ServicesMobile}
+          desktopComponent={Services}
+        />
+        <ResponsiveWrapper
+          mobileComponent={PortfolioMobile}
+          desktopComponent={PortfolioSection}
+        />
+        <ResponsiveWrapper
+          mobileComponent={MediaMobile}
+          desktopComponent={Media}
+        />
+        <ResponsiveWrapper
+          mobileComponent={TestimonialMobile}
+          desktopComponent={Testimonial}
+        />
+        <ResponsiveWrapper
+          mobileComponent={ContactMobile}
+          desktopComponent={Contact}
+        />
+      </div>
     </div>
   );
 }
