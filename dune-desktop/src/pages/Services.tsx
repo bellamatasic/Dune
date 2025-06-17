@@ -39,7 +39,7 @@ const Services: React.FC = () => {
   }, []);
 
   return (
-    <section className="w-full py-32 px-4 bg-white relative overflow-hidden">
+    <section id="services" className="w-full py-32 px-4 bg-white relative overflow-hidden">
       {/* Title background text */}
       <div className="absolute z-20 text-[200px] font-bold font-oswald leading-[180px] left-[calc(50%-800px)] top-[130px] hidden lg:block pointer-events-none">
         <span className="absolute inset-0 text-purple-500 blur-sm">

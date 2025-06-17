@@ -2,14 +2,14 @@ import React from "react";
 
 const Media: React.FC = () => {
   return (
-    <section className="w-full py-32 px-4 bg-white relative overflow-hidden">
+    <section id="media" className="w-full py-32 px-4 bg-white relative overflow-hidden">
       {/* Vertical MEDIA text on the left */}
-      <div className="absolute left-[calc(50%-1150px)] top-[calc(33.33%+160px)] -translate-y-1/2 rotate-[-90deg] text-[300px] font-bold font-oswald text-black leading-none pointer-events-none select-none">
+      <div className="absolute left-[calc(50%-1050px)] top-[calc(33.33%+160px)] -translate-y-1/2 rotate-[-90deg] text-[300px] font-bold font-oswald text-black leading-none pointer-events-none select-none">
         MEDIA
       </div>
 
-      {/* Content container */}
-      <div className="max-w-[2000px] mx-auto">
+      {/* Media Container */}
+      <div className="w-full max-w-[1400px] mx-auto px-4">
         {/* Media Articles Grid */}
         <div className="relative h-[800px]">
           <div className="absolute inset-0 overflow-y-auto ml-[15%] pr-8 pl-8 scrollbar-hide">

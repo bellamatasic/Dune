@@ -2,7 +2,19 @@ import React, { useState } from "react";
 import Accordion from "../../components/Accordion";
 
 const ServicesMobile: React.FC = () => {
-    const [openAccordion, setOpenAccordion] = useState<string | null>(null);
+    const [openAccordions, setOpenAccordions] = useState<Set<string>>(new Set());
+
+    const toggleAccordion = (id: string) => {
+        setOpenAccordions(prev => {
+            const newSet = new Set(prev);
+            if (newSet.has(id)) {
+                newSet.delete(id);
+            } else {
+                newSet.add(id);
+            }
+            return newSet;
+        });
+    };
 
     const services = [
         {
@@ -54,11 +66,12 @@ const ServicesMobile: React.FC = () => {
             {/* Service Cards Container */}
             <div className="max-w-[450px] mx-auto px-4 space-y-4 pb-64">
                 {services.map((service) => (
-                    <div key={service.id} onClick={() => setOpenAccordion(openAccordion === service.id ? null : service.id)}>
+                    <div key={service.id}>
                         <Accordion
                             title={service.title}
                             content={service.content}
-                            isOpen={openAccordion === service.id}
+                            isOpen={openAccordions.has(service.id)}
+                            onToggle={() => toggleAccordion(service.id)}
                         />
                     </div>
                 ))}

@@ -6,7 +6,7 @@ const Header: React.FC = () => {
       <div className="text-white text-5xl font-bold font-oswald">DUNE</div>
       <nav className="flex gap-10 text-white text-2xl font-inter items-center">
         <a href="#services" className="font-normal px-4 py-2 rounded-md transition-colors duration-300 hover:bg-gray-800">Services</a>
-        <a href="#portfolio" className="font-normal px-4 py-2 rounded-md transition-colors duration-300 hover:bg-gray-800">Portfolio</a>
+        <a href="#media" className="font-normal px-4 py-2 rounded-md transition-colors duration-300 hover:bg-gray-800">Media</a>
         <a href="#about" className="font-normal px-4 py-2 rounded-md transition-colors duration-300 hover:bg-gray-800">About</a>
         <a href="#contact" className="font-bold px-4 py-2 rounded-md transition-colors duration-300 hover:bg-gray-800">Let's Talk</a>
       </nav>
