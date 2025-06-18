@@ -1,161 +1,63 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
-import aiPlaceholder from "../assets/ai_placeholder.jpg";
-import robotHand from "../assets/robot_hand.png";
+
+const spaceImages = [
+  "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1187&q=80", // Banner
+  "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=579&q=80", // Item 1
+  "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=585&q=80"  // Item 2
+];
 
 const Portfolio: React.FC = () => {
-  const [visibleImages, setVisibleImages] = useState<Set<number>>(new Set());
-  const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const index = imageRefs.current.findIndex((ref) => ref === entry.target);
-          if (index !== -1) {
-            setVisibleImages((prev) => {
-              const newSet = new Set(prev);
-              if (entry.isIntersecting) {
-                newSet.add(index);
-              } else {
-                newSet.delete(index);
-              }
-              return newSet;
-            });
-          }
-        });
-      },
-      {
-        threshold: 0.5,
-        rootMargin: "-20% 0px",
-      }
-    );
-
-    imageRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="portfolio" className="w-full py-32 px-4 bg-white relative overflow-hidden">
-      {/* Title background text */}
-      <div className="absolute z-20 text-[200px] font-bold font-oswald leading-[180px] left-[calc(50%-800px)] top-[130px] hidden lg:block pointer-events-none">
-        <span className="absolute inset-0 text-purple-500 blur-sm">
-          FO<br />LI<br />O
-        </span>
-        <span className="relative z-10 text-white drop-shadow-[0_0_20px_rgba(168,85,247,0.8)]">
-          FO<br />LI<br />O
-        </span>
+    <section className="w-full bg-white py-20 flex flex-col items-center relative">
+      {/* Title */}
+      <div className="text-center relative z-20 -mt-[3px]">
+        <h2 className="text-black text-9xl font-bold font-oswald leading-[150px] tracking-[58.5px]">
+          PORT
+        </h2>
+        <h2 className="text-black text-9xl font-bold font-oswald leading-[150px] tracking-[37.5px] relative z-30">
+          <span
+            className="bg-gradient-to-b from-black from-50% to-white to-50% bg-clip-text text-transparent"
+            style={{
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >
+            FOLIO
+          </span>
+        </h2>
       </div>
 
-      {/* Grid Layout */}
-      <div className="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12">
-        {/* Left column with images - Scrollable container */}
-        <div className="relative h-[800px]">
-          <div className="absolute inset-0 overflow-y-auto ml-[15%] pr-8 pl-8 scrollbar-hide">
-            <div className="space-y-3 max-w-[300px] mx-auto">
-              {[
-                { src: aiPlaceholder, alt: "AI Technology" },
-                { src: robotHand, alt: "Robot Hand" },
-                { src: aiPlaceholder, alt: "AI Technology" },
-                { src: robotHand, alt: "Robot Hand" },
-                { src: aiPlaceholder, alt: "AI Technology" },
-                { src: robotHand, alt: "Robot Hand" },
-              ].map((image, index) => (
-                <div
-                  key={index}
-                  ref={(el) => {
-                    imageRefs.current[index] = el;
-                  }}
-                  className="relative rounded-[10px] border border-black transition-all duration-500 group"
-                >
-                  <img
-                    src={image.src}
-                    className="rounded-[10px] w-full h-[200px] object-cover"
-                    alt={image.alt}
-                  />
-                  <div
-                    className={`absolute inset-0 bg-black transition-opacity duration-500 rounded-[10px] group-hover:opacity-0 ${
-                      visibleImages.has(index) ? "opacity-0" : "opacity-50"
-                    }`}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+      {/* Large Image with overlay */}
+      <div className="w-full flex justify-center -mt-20 relative z-10">
+        <div className="relative w-[90%] max-w-[1187px] h-[240px] group">
+          <img
+            className="w-full h-full rounded-[10px] object-cover"
+            src={spaceImages[0]}
+            alt="Portfolio Banner"
+          />
+          <div className="absolute inset-0 bg-black/60 rounded-[10px] transition-opacity duration-300 group-hover:opacity-0 pointer-events-none" />
         </div>
+      </div>
 
-        {/* Right column with title and services */}
-        <div className="space-y-6 -ml-[10%] w-[130%]">
-          <h2 className="text-6xl font-oswald font-bold mb-12 ml-8">
-            AI Solutions Tailored To Boost Your Content
-          </h2>
-
-          <div>
-            <div className="flex items-center gap-1 group">
-              <div className="w-12 h-12 rounded-full border-2 border-black flex items-center justify-center -translate-x-16 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
-                <FaArrowRight className="text-black text-xl" />
-              </div>
-              <div className="group-hover:translate-x-4 transition-transform duration-300 -ml-0.5">
-                <h3 className="text-3xl font-bold font-inter mb-2">
-                  COACHING AND TRAINING
-                </h3>
-                <p className="text-3xl font-light font-inter">
-                  We handle your content creation with AI, so you can focus on growing your business.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div className="flex items-center gap-1 group">
-              <div className="w-12 h-12 rounded-full border-2 border-black flex items-center justify-center -translate-x-16 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
-                <FaArrowRight className="text-black text-xl" />
-              </div>
-              <div className="group-hover:translate-x-4 transition-transform duration-300 -ml-0.5">
-                <h3 className="text-3xl font-bold font-inter mb-2">
-                  DONE-FOR-YOU AI CONTENT
-                </h3>
-                <p className="text-3xl font-light font-inter">
-                  Learn how to use AI tools effectively to streamline your processes.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div className="flex items-center gap-1 group">
-              <div className="w-12 h-12 rounded-full border-2 border-black flex items-center justify-center -translate-x-16 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
-                <FaArrowRight className="text-black text-xl" />
-              </div>
-              <div className="group-hover:translate-x-4 transition-transform duration-300 -ml-0.5">
-                <h3 className="text-3xl font-bold font-inter mb-2">
-                  AUTOMATION & SYSTEM SETUP
-                </h3>
-                <p className="text-3xl font-light font-inter">
-                  We help you integrate AI into your workflow to save time and boost results.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div className="flex items-center gap-1 group">
-              <div className="w-12 h-12 rounded-full border-2 border-black flex items-center justify-center -translate-x-16 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
-                <FaArrowRight className="text-black text-xl" />
-              </div>
-              <div className="group-hover:translate-x-4 transition-transform duration-300 -ml-0.5">
-                <h3 className="text-3xl font-bold font-inter mb-2">
-                  AI STRATEGY & CONSULTING
-                </h3>
-                <p className="text-3xl font-light font-inter">
-                  We build AI-powered systems that automate repetitive content tasks, saving you hours each week.
-                </p>
-              </div>
-            </div>
-          </div>
+      {/* Two Smaller Images Side-by-Side with overlay */}
+      <div className="w-full flex flex-col md:flex-row gap-6 justify-center items-start mt-10">
+        <div className="relative w-[90%] md:w-[579px] h-[191px] group">
+          <img
+            className="w-full h-full rounded-[10px] object-cover"
+            src={spaceImages[1]}
+            alt="Portfolio Item 1"
+          />
+          <div className="absolute inset-0 bg-black/60 rounded-[10px] transition-opacity duration-300 group-hover:opacity-0 pointer-events-none" />
+        </div>
+        <div className="relative w-[90%] md:w-[585px] h-[329px] group">
+          <img
+            className="w-full h-full rounded-[10px] object-cover"
+            src={spaceImages[2]}
+            alt="Portfolio Item 2"
+          />
+          <div className="absolute inset-0 bg-black/60 rounded-[10px] transition-opacity duration-300 group-hover:opacity-0 pointer-events-none" />
         </div>
       </div>
     </section>

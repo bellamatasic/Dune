@@ -3,7 +3,7 @@ import React from "react";
 
 const TestimonialMobile: React.FC = () => {
     return (
-        <section className="w-full pt-0 pb-6 px-4 bg-white relative overflow-hidden min-h-screen">
+        <section className="w-full pt-0 pb-0 px-4 bg-white relative overflow-hidden min-h-screen">
             {/* Title - Adjusted for mobile */}
             <div className="absolute left-1/2 top-[200px] -translate-x-1/2 text-center">
                 <span className="text-black text-6xl font-extralight font-['Oswald'] leading-snug">client </span>

@@ -9,7 +9,7 @@ const MetricsMobile: React.FC = () => {
     const focusCount = useCountAnimation({ targetValue: 100, trigger: isIntersecting });
 
     return (
-        <section ref={targetRef} className="w-full min-h-[600px] bg-white overflow-hidden relative flex flex-col items-center justify-center px-4 py-12 gap-12">
+        <section ref={targetRef} className="w-full h-[1000px] bg-white overflow-hidden relative flex flex-col items-center justify-center px-4 py-12 gap-12">
             {/* Headlines */}
             <div className="flex flex-col items-center gap-4">
                 <h2 className="text-5xl font-bold font-oswald text-black">{fasterCount}X Faster</h2>

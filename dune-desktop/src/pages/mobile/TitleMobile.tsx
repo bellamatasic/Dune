@@ -2,7 +2,7 @@ import React from "react";
 
 const TitleMobile: React.FC = () => {
     return (
-        <section className="relative w-full h-[600px] bg-gradient-to-b from-fuchsia-600/50 via-purple-500/70 to-white overflow-hidden flex items-center justify-center">
+        <section className="relative w-full h-[1200px] bg-gradient-to-b from-fuchsia-600/50 via-purple-500/70 to-white overflow-hidden flex items-center justify-center">
             {/* Text Layers for Depth Effect */}
             <h1 className="absolute text-6xl font-bold font-oswald leading-[60px] text-center text-neutral-100/30 blur-md outlined-text">
                 create content smarter, not harder

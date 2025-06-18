@@ -4,14 +4,14 @@ const MediaMobile: React.FC = () => {
     return (
         <section className="w-full py-12 px-4 bg-white relative overflow-hidden">
             {/* Vertical MEDIA text on the left */}
-            <div className="absolute left-[calc(50%-500px)] top-[calc(33.33%+20px)] -translate-y-1/2 rotate-[-90deg] text-[250px] font-bold font-oswald text-black leading-none pointer-events-none select-none">
+            <div className="absolute left-[calc(50%-500px)] top-[450px] rotate-[-90deg] text-[250px] font-bold font-oswald text-black leading-none pointer-events-none select-none">
                 MEDIA
             </div>
 
             {/* Content container */}
             <div className="max-w-[350px] ml-[calc(50%-50px)] mt-[200px]">
                 {/* Media Articles Grid */}
-                <div className="grid grid-cols-1 gap-8">
+                <div className="grid grid-cols-1 gap-8 h-[650px] overflow-y-auto scrollbar-hide">
                     {/* Article 1 */}
                     <div className="w-[100%] bg-zinc-300 rounded-[10px] p-6">
                         <h3 className="text-2xl font-black font-inter leading-loose mb-2">
