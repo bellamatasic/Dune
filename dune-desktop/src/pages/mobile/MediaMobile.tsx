@@ -20,7 +20,7 @@ const MediaMobile: React.FC = () => {
                         <p className="text-xl font-normal font-inter leading-relaxed">
                             What does it really take to go from uncertainty to unstoppable? Bella Matasic breaks down the raw, unfiltered truth of building a business, learning from failures, and taking action before you're "ready."
                             <br />
-                            👉 Read the full story here
+                            <span className="transition-colors duration-300 hover:text-purple-500 cursor-pointer">👉 Read the full story here</span>
                         </p>
                     </div>
 
@@ -32,7 +32,7 @@ const MediaMobile: React.FC = () => {
                         <p className="text-xl font-normal font-inter leading-relaxed">
                             Discover how artificial intelligence is reshaping the landscape of content creation, making it faster, more efficient, and more impactful than ever before.
                             <br />
-                            👉 Read the full story here
+                            <span className="transition-colors duration-300 hover:text-purple-500 cursor-pointer">👉 Read the full story here</span>
                         </p>
                     </div>
 
@@ -44,7 +44,7 @@ const MediaMobile: React.FC = () => {
                         <p className="text-xl font-normal font-inter leading-relaxed">
                             What happens when you stop waiting for the perfect moment and start creating your own opportunities? Bella Matasic shares the raw truth behind her journey—failures, pivots, and the relentless mindset that turned setbacks into stepping stones.
                             <br />
-                            👉 Read the full story here
+                            <span className="transition-colors duration-300 hover:text-purple-500 cursor-pointer">👉 Read the full story here</span>
                         </p>
                     </div>
                 </div>
