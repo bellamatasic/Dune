@@ -1,35 +1,75 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// src/App.tsx
+import React, { useState } from "react";
+import ResponsiveWrapper from "./components/ResponsiveWrapper";
+import TitleSection from "./pages/Title";
+import TitleMobile from "./pages/mobile/TitleMobile";
+import Services from "./pages/Services";
+import ServicesMobile from "./pages/mobile/ServicesMobile";
+import PortfolioSection from "./pages/Portfolio";
+import PortfolioMobile from "./pages/mobile/PortfolioMobile";
+import MetricsSection from "./pages/Metrics";
+import MetricsMobile from "./pages/mobile/MetricsMobile";
+import Testimonial from "./pages/Testimonial";
+import TestimonialMobile from "./pages/mobile/TestimonialMobile";
+import Contact from "./pages/Contact";
+import ContactMobile from "./pages/mobile/ContactMobile";
+import Media from "./pages/Media";
+import MediaMobile from "./pages/mobile/MediaMobile";
+import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
+import MobileNav from "./components/MobileNav";
+import useIsMobile from "./hooks/useIsMobile";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const isMobile = useIsMobile();
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="App">
+      {isMobile ? (
+        <>
+          <MobileNav onMenuClick={toggleSidebar} />
+          <Sidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
+        </>
+      ) : (
+        <Header />
+      )}
+      <div className="flex flex-col gap-32">
+        <ResponsiveWrapper
+          mobileComponent={TitleMobile}
+          desktopComponent={TitleSection}
+        />
+        <ResponsiveWrapper
+          mobileComponent={MetricsMobile}
+          desktopComponent={MetricsSection}
+        />
+        <ResponsiveWrapper
+          mobileComponent={ServicesMobile}
+          desktopComponent={Services}
+        />
+        <ResponsiveWrapper
+          mobileComponent={PortfolioMobile}
+          desktopComponent={PortfolioSection}
+        />
+        <ResponsiveWrapper
+          mobileComponent={MediaMobile}
+          desktopComponent={Media}
+        />
+        <ResponsiveWrapper
+          mobileComponent={TestimonialMobile}
+          desktopComponent={Testimonial}
+        />
+        <ResponsiveWrapper
+          mobileComponent={ContactMobile}
+          desktopComponent={Contact}
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
